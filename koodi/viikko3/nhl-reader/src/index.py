@@ -6,7 +6,7 @@ def main():
     response = requests.get(url).json()
 
     print("JSON-muotoinen vastaus:")
-    print(response)
+    # print(response)
 
     players = []
 
