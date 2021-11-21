@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    paths:
+      koodi/viikko3/web-login-robot
   pull_request:
     branches: [main]
 
@@ -16,6 +17,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.6
+        working-directory: /koodi/viikko3/web-login-robot
       - name: Install Poetry
         run: pip install poetry
       - name: Install dependencies
