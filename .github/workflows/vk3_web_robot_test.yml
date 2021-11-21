@@ -18,10 +18,9 @@ jobs:
         with:
           python-version: 3.6
       - name: Install Poetry
-        working-directory: ./koodi/viikko3/web-login-robot
         run: pip install poetry
       - name: Install dependencies
-        working-directory: ./koodi/viikko3/web-login-robot
+        working-directory: ../koodi/viikko3/web-login-robot
         run: poetry install
       - name: Run robot tests
         working-directory: ./koodi/viikko3/web-login-robot
