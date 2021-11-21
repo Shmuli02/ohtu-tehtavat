@@ -4,8 +4,8 @@ Library  ../AppLibrary.py
 
 *** Variables ***
 ${SERVER}  localhost:5000
-${BROWSER}  chrome
-${DELAY}  0.5 seconds
+${BROWSER}  headlesschrome
+${DELAY}  0 seconds
 ${HOME URL}  http://${SERVER}
 ${LOGIN URL}  http://${SERVER}/login
 ${REGISTER URL}  http://${SERVER}/register
@@ -25,9 +25,15 @@ Main Page Should Be Open
 Register Page Should Be Open
     Title Should Be  Register
 
+Welcome Page Sgould Be Open
+    Title Should Be  Welcome to Ohtu Application!
+
 Go To Login Page
     Go To  ${LOGIN URL}
 
 Go To Main Page
     Go TO  ${HOME URL}
+
+Go To Register Page
+    Go To  ${REGISTER URL}
 
