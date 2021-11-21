@@ -10,6 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./koodi/viikko3/web-login-robot
 
     steps:
       - uses: actions/checkout@v2
@@ -20,8 +23,6 @@ jobs:
       - name: Install Poetry
         run: pip install poetry
       - name: Install dependencies
-        working-directory: ./koodi/viikko3/web-login-robot
         run: poetry install
       - name: Run robot tests
-        working-directory: ./koodi/viikko3/web-login-robot
         run: bash run_robot_tests.sh
