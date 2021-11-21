@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     paths:
-      koodi/viikko3/web-login-robot
+      [main]
   pull_request:
     branches: [main]
 
