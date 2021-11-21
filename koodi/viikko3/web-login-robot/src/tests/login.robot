@@ -24,7 +24,6 @@ Login With Nonexistent Username
     Submit Login Credentials
     Login Should Fail With Message  Invalid username or password
     
-
 *** Keywords ***
 Create User And Go To Login Page
     Create User  kalle  kalle123
