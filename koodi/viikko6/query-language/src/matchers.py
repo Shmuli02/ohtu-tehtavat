@@ -29,6 +29,8 @@ class HasAtLeast:
 class All:
     def __init__(self):
         pass
+    def matches(self,player):
+        return True
 
 class Not:
     def __init__(self, *matchers):
@@ -61,3 +63,19 @@ class Or:
                 return True
         
         return False
+
+class QueryBuilder:
+    def __init__(self,build=All()):
+        self.build_olio = build
+        
+    def playsIn(self,team):
+        return QueryBuilder(And(self.build_olio,PlaysIn(team)))
+    
+    def hasAtLeast(self,value,attr):
+        return QueryBuilder(And(self.build_olio,HasAtLeast(value,attr)))
+    
+    def hasFewerThan(self,value,attr):
+        return QueryBuilder(And(self.build_olio,HasFewerThan(value,attr)))
+
+    def build(self):
+        return self.build_olio
