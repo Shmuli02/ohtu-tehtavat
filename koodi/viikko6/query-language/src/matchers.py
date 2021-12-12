@@ -79,3 +79,6 @@ class QueryBuilder:
 
     def build(self):
         return self.build_olio
+    
+    def oneOf(self, a, b):
+        return QueryBuilder(Or(a, b))
